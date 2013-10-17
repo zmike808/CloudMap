@@ -1,7 +1,6 @@
 package src;
 
 import java.awt.Color;
-import java.awt.Paint;
 import java.util.ArrayList;
 import java.util.Stack;
 import javax.swing.JFrame;
@@ -15,24 +14,16 @@ import org.jfree.chart.plot.PiePlot;
 
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
-import org.jfree.util.Rotation;
 import com.dropbox.core.DbxEntry;
 import com.dropbox.core.DbxException;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ToolTipManager;
-import org.jfree.chart.ChartFrame;
 import org.jfree.chart.entity.ChartEntity;
 import org.jfree.chart.entity.PieSectionEntity;
-import org.jfree.chart.event.ChartChangeEvent;
 import org.jfree.chart.labels.StandardPieToolTipGenerator;
 import org.jfree.chart.plot.PiePlot3D;
-import org.jfree.data.general.DatasetChangeEvent;
-import org.jfree.data.general.DatasetChangeListener;
 
 
 
@@ -78,7 +69,7 @@ public class GraphicalPortion extends JFrame {
                 
                // panel.addch
                 panel.setPopupMenu(null);
-             
+             //converts mouse clicks on the piechart to entering/exiting a folder 
 		panel.addChartMouseListener(new ChartMouseListener(){
 
                         @Override
@@ -158,7 +149,7 @@ public class GraphicalPortion extends JFrame {
                             if (entity != null && entity instanceof PieSectionEntity)
                             {
                                 PieSectionEntity e = (PieSectionEntity) entity;
-                                e.
+                                
                                     String key = (String) e.getSectionKey();//.getCategory();
                                   //  System.out.println("key: " + key);
                                     if (lastMouseOverKey != key)

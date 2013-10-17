@@ -74,6 +74,7 @@ public class HTTPClient {
         String auth_token;
   
             File authFile = new File("authtoken");
+            //save authtoken so user's only have to enter it on the first run of the program
             if(!authFile.exists())
             {
                 auth_token = HTTPClient.authorize("k43q7eqwl6jialx", "k67mwnb3jjr8x6y");
@@ -90,25 +91,14 @@ public class HTTPClient {
                 
             }
            
-            DropBoxHandler dbhandler = new DropBoxHandler(auth_token,"testinghackmit");
-          //  ArrayList<DbxEntry> files = dbhandler.getFilesInDir("/",1);
-               /* for(DbxEntry ent : files)
-                {
-                   if(ent.isFolder())
-                   {
-                       System.out.println("Folder: " + ent.asFolder().name);
-                   }
-                   else{
-                    System.out.println("File: " + ent.asFile().name + " -- " + ent.asFile().humanSize);
-                   }
-                }*/
-          //  dbhandler.getQuota();
+            
+          
             GraphicalPortion gp = new GraphicalPortion("MapMyCloud", "Your Dropbox:", auth_token);
             gp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         	gp.setSize(800,600);
         	gp.pack();
         	gp.setVisible(true);
-            //dbhandler.getFolderSize("/");
+           
 	}
 
 }
